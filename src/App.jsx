@@ -7,9 +7,10 @@ import cvInformation from "./data";
 
 function App() {
   const [data, setData] = useState(cvInformation);
+
   return (
     <>
-      <Information />
+      <Information data={data} setData={setData} />
       <Cv data={data} />
     </>
   );
