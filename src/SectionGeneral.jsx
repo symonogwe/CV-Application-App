@@ -1,12 +1,23 @@
 import Input from "./Input";
 import { TextArea } from "./Input";
 
-export default function SectionGeneral({ title }) {
+export default function SectionGeneral({ title, data, setData }) {
+  function handleName(e) {
+    setData({
+      ...data,
+      generalInfo: { ...data.generalInfo, name: e.target.value },
+    });
+  }
   if (title === "General Info") {
     return (
       <>
         <h2>{title}</h2>
-        <Input label={"Name"} type={"text"} />
+        <Input
+          label={"Name"}
+          type={"text"}
+          value={data.generalInfo.name}
+          onChange={handleName}
+        />
         <Input label={"Email"} type={"email"} />
         <Input label={"Phone"} type={"number"} />
       </>
