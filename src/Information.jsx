@@ -1,4 +1,5 @@
 import SectionGeneral from "./SectionGeneral";
+import Button from "./Button";
 
 function Information() {
   return (
@@ -6,6 +7,7 @@ function Information() {
       <SectionGeneral title={"General Info"} />
       <SectionGeneral title={"Educational Experience"} />
       <SectionGeneral title={"Work Experience"} />
+      <Button />
     </>
   );
 }
