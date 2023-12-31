@@ -1,12 +1,12 @@
 import SectionGeneral from "./SectionGeneral";
 import Button from "./Button";
 
-function Information() {
+function Information({ data, setData }) {
   return (
     <>
-      <SectionGeneral title={"General Info"} />
-      <SectionGeneral title={"Educational Experience"} />
-      <SectionGeneral title={"Work Experience"} />
+      <SectionGeneral title={"General Info"} data={data} setData={setData} />
+      <SectionGeneral title={"Educational Experience"} data={data} />
+      <SectionGeneral title={"Work Experience"} data={data} />
       <Button />
     </>
   );
