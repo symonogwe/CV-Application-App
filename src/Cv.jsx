@@ -1,6 +1,7 @@
 export default function Cv({ data }) {
   return (
     <>
+      <h1>MY CV</h1>
       <h1>General Information</h1>
       <p>Name: {data.generalInfo.name}</p>
       <p>Email: {data.generalInfo.email}</p>
