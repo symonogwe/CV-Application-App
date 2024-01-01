@@ -1,5 +1,4 @@
 import SectionGeneral from "./SectionGeneral";
-import Button from "./Button";
 
 function Information({ data, setData }) {
   return (
@@ -11,7 +10,6 @@ function Information({ data, setData }) {
         setData={setData}
       />
       <SectionGeneral title={"Work Experience"} data={data} setData={setData} />
-      <Button />
     </>
   );
 }
