@@ -8,10 +8,10 @@ function App() {
   const [data, setData] = useState(cvInformation);
 
   return (
-    <>
+    <div className="app">
       <Information data={data} setData={setData} />
       <Cv data={data} />
-    </>
+    </div>
   );
 }
 
