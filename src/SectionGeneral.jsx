@@ -73,7 +73,7 @@ export default function SectionGeneral({ title, data, setData }) {
 
   if (title === "General Info") {
     return (
-      <>
+      <div className="general-info-container">
         <h2>{title}</h2>
         <Input
           label={"Name"}
@@ -93,11 +93,11 @@ export default function SectionGeneral({ title, data, setData }) {
           value={data.generalInfo.phone}
           onChange={handlePhone}
         />
-      </>
+      </div>
     );
   } else if (title === "Educational Experience") {
     return (
-      <>
+      <div className="educational-info-container">
         <h2>{title}</h2>
         <Input
           label={"School"}
@@ -117,11 +117,11 @@ export default function SectionGeneral({ title, data, setData }) {
           value={data.educationalInfo.dateCompleted}
           onChange={handleSchoolDate}
         />
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="work-info-container">
         <h2>{title}</h2>
         <Input
           label={"Company"}
@@ -140,7 +140,7 @@ export default function SectionGeneral({ title, data, setData }) {
           value={data.workInfo.responsibility}
           onChange={handleResponsibility}
         />
-      </>
+      </div>
     );
   }
 }
