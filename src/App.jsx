@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import "./App.css";
 import Information from "./Information";
 import Cv from "./Cv";
 import cvInformation from "./data";
