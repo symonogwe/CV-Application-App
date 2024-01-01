@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Volkhov&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Aleo&display=swap");
+
+:root {
+  --base-color: #1d2d44;
+  --sub-base-color: #3e5c76;
+  --sub-color: #0d1321;
+  --text-color: #f0ebd8;
+  --base-p-fs: calc(0.8rem + 0.7vw);
+  --base-h1-fs: calc(2rem + 2vw);
+  --base-h2-fs: calc(1rem + 0.8vw);
+  --base-h3-fs: calc(1.2rem + 1vw);
+  --base-h1-ff: "Secular One", sans-serif;
+  --base-h2-ff: "Assistant", sans-serif;
+  --base-p-ff: "Volkhov", sans-serif;
+  --logo-width: max(35px, 30%);
+  --base-paragraph-ff: "Nanum Myeongjo", sans-serif;
+  --base-margin: 0.2em 0.6em;
+  --base-padding: 0.4em 0.6em;
+  --box-shadow: 5px 10px 30px black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--sub-base-color);
+  min-height: 100vh;
+}
+
+.app {
+}
+
+.general-info-container {
+  display: grid;
+  justify-items: center;
+  padding: 1.3em 0em;
+}
+
+.educational-info-container {
+  display: grid;
+  justify-items: center;
+  padding: 1.3em 0em;
+}
+
+.work-info-container {
+  display: grid;
+  justify-items: center;
+  padding: 1.3em 0em;
+}
+
+.cv-container {
+  margin-top: 2em;
+  background-color: #fff;
+  padding: 2em;
+}
+
+.cv-container h1 {
+  text-align: center;
+}
