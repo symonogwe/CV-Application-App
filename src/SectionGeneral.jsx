@@ -26,10 +26,14 @@ export default function SectionGeneral({ title, data, setData }) {
 
   // Educational Info onChange handlers
   function handleSchool(e) {
-    setData({
-      ...data,
-      educationalInfo: { ...data.educationalInfo, school: e.target.value },
-    });
+    const targetId = e.target.id;
+    const targetObject = data.educationalInfo[targetId];
+    targetObject.school = e.target.value;
+
+    const newData = { ...data };
+    newData.educationalInfo[targetId] = targetObject;
+
+    setData(newData);
   }
 
   function handleTitle(e) {
@@ -99,24 +103,31 @@ export default function SectionGeneral({ title, data, setData }) {
     return (
       <div className="educational-info-container">
         <h2>{title}</h2>
-        <Input
-          label={"School"}
-          type={"text"}
-          value={data.educationalInfo.school}
-          onChange={handleSchool}
-        />
-        <Input
-          label={"Title"}
-          type={"text"}
-          value={data.educationalInfo.title}
-          onChange={handleTitle}
-        />
-        <Input
-          label={"Completed Date"}
-          type={"date"}
-          value={data.educationalInfo.dateCompleted}
-          onChange={handleSchoolDate}
-        />
+        {data.educationalInfo.map((item) => {
+          return (
+            <div key={item.id} className="education-block">
+              <Input
+                label={"School"}
+                type={"text"}
+                value={item.school}
+                onChange={handleSchool}
+                id={item.id}
+              />
+              <Input
+                label={"Title"}
+                type={"text"}
+                value={item.title}
+                onChange={handleTitle}
+              />
+              <Input
+                label={"Completed Date"}
+                type={"date"}
+                value={item.dateCompleted}
+                onChange={handleSchoolDate}
+              />
+            </div>
+          );
+        })}
       </div>
     );
   } else {
