@@ -4,16 +4,28 @@ const cvInformation = {
     email: "",
     phone: "",
   },
-  educationalInfo: {
-    school: "",
-    title: "",
-    dateCompleted: "",
-  },
-  workInfo: {
-    company: "",
-    position: "",
-    responsibility: "",
-  },
+  educationalInfo: [
+    {
+      school: "",
+      title: "",
+      dateCompleted: "",
+      id: 0,
+    },
+    {
+      school: "",
+      title: "",
+      dateCompleted: "",
+      id: 1,
+    },
+  ],
+
+  workInfo: [
+    {
+      company: "",
+      position: "",
+      responsibility: "",
+    },
+  ],
 };
 
 export default cvInformation;
