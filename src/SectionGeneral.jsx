@@ -2,6 +2,7 @@ import Input from "./Input";
 import { TextArea } from "./Input";
 
 export default function SectionGeneral({ title, data, setData }) {
+  // General Info Onchange handlers
   function handleName(e) {
     setData({
       ...data,
@@ -23,6 +24,7 @@ export default function SectionGeneral({ title, data, setData }) {
     });
   }
 
+  // Educational Info onChange handlers
   function handleSchool(e) {
     setData({
       ...data,
@@ -44,6 +46,28 @@ export default function SectionGeneral({ title, data, setData }) {
         ...data.educationalInfo,
         dateCompleted: e.target.value,
       },
+    });
+  }
+
+  // Work Info onChange handlers
+  function handleCompany(e) {
+    setData({
+      ...data,
+      workInfo: { ...data.workInfo, company: e.target.value },
+    });
+  }
+
+  function handlePosition(e) {
+    setData({
+      ...data,
+      workInfo: { ...data.workInfo, position: e.target.value },
+    });
+  }
+
+  function handleResponsibility(e) {
+    setData({
+      ...data,
+      workInfo: { ...data.workInfo, responsibility: e.target.value },
     });
   }
 
@@ -99,9 +123,23 @@ export default function SectionGeneral({ title, data, setData }) {
     return (
       <>
         <h2>{title}</h2>
-        <Input label={"Company"} type={"text"} />
-        <Input label={"Position"} type={"text"} />
-        <TextArea label={"Responsibility"} />
+        <Input
+          label={"Company"}
+          type={"text"}
+          value={data.workInfo.company}
+          onChange={handleCompany}
+        />
+        <Input
+          label={"Position"}
+          type={"text"}
+          value={data.workInfo.position}
+          onChange={handlePosition}
+        />
+        <TextArea
+          label={"Responsibility"}
+          value={data.workInfo.responsibility}
+          onChange={handleResponsibility}
+        />
       </>
     );
   }
