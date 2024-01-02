@@ -41,20 +41,28 @@ body {
 
 .general-info-container {
   display: grid;
+  gap: 5px;
   justify-items: center;
   padding: 1.3em 0em;
 }
 
 .educational-info-container {
   display: grid;
+  gap: 5px;
   justify-items: center;
   padding: 1.3em 0em;
+}
+
+.education-block {
+  display: grid;
+  gap: 5px;
 }
 
 .work-info-container {
   display: grid;
   justify-items: center;
   padding: 1.3em 0em;
+  gap: 5px;
 }
 
 .cv-container {
