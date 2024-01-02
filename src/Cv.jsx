@@ -18,10 +18,16 @@ export default function Cv({ data }) {
         ))}
       </div>
 
-      <h2>Work Information</h2>
-      <p>Company: {data.workInfo.company}</p>
-      <p>Position: {data.workInfo.position}</p>
-      <p>Responsibility: {data.workInfo.responsibility}</p>
+      <div className="cv-work-container">
+        {data.workInfo.map((item) => (
+          <div key={item.id} className="cv-work">
+            <h4>Work Information {item.id + 1}</h4>
+            <p>Company: {item.company}</p>
+            <p>Position: {item.position}</p>
+            <p>Responsibility: {item.responsibility}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
