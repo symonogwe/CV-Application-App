@@ -59,24 +59,36 @@ export default function SectionGeneral({ title, data, setData }) {
 
   // Work Info onChange handlers
   function handleCompany(e) {
-    setData({
-      ...data,
-      workInfo: { ...data.workInfo, company: e.target.value },
-    });
+    const targetId = e.target.id;
+    const targetObject = data.workInfo[targetId];
+    targetObject.company = e.target.value;
+
+    const newData = { ...data };
+    newData.workInfo[targetId] = targetObject;
+
+    setData(newData);
   }
 
   function handlePosition(e) {
-    setData({
-      ...data,
-      workInfo: { ...data.workInfo, position: e.target.value },
-    });
+    const targetId = e.target.id;
+    const targetObject = data.workInfo[targetId];
+    targetObject.position = e.target.value;
+
+    const newData = { ...data };
+    newData.workInfo[targetId] = targetObject;
+
+    setData(newData);
   }
 
   function handleResponsibility(e) {
-    setData({
-      ...data,
-      workInfo: { ...data.workInfo, responsibility: e.target.value },
-    });
+    const targetId = e.target.id;
+    const targetObject = data.workInfo[targetId];
+    targetObject.responsibility = e.target.value;
+
+    const newData = { ...data };
+    newData.workInfo[targetId] = targetObject;
+
+    setData(newData);
   }
 
   // Add section button functionality
@@ -176,7 +188,6 @@ export default function SectionGeneral({ title, data, setData }) {
     return (
       <div className="work-info-container">
         <h2>{title}</h2>
-
         {data.workInfo.map((item) => {
           return (
             <div key={item.id} className="work-block">
