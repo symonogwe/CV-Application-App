@@ -65,6 +65,8 @@ body {
   gap: 5px;
 }
 
+/* CV SECTION */
+
 .cv-container {
   margin-top: 2em;
   background-color: #fff;
@@ -73,6 +75,17 @@ body {
 
 .cv-container h1 {
   text-align: center;
+}
+
+.cv-education-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.cv-education h4 {
+  border-bottom: 1px solid black;
 }
 
 @media (min-width: 600px) {
