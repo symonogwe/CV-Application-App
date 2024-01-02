@@ -66,6 +66,27 @@ body {
   gap: 5px;
 }
 
+.skills-info-container {
+  display: grid;
+  justify-items: center;
+  padding: 1.3em 0em;
+  gap: 5px;
+}
+
+button {
+  padding: 0.6em 1em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--sub-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+button:hover {
+  scale: 1.1;
+  transition: 300ms ease-in-out;
+}
+
 /* CV SECTION */
 
 .cv-container {
@@ -86,8 +107,16 @@ body {
   text-align: center;
 }
 
+.cv-skill-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  text-align: center;
+}
+
 .cv-education h4,
-.cv-work h4 {
+.cv-work h4,
+.cv-skill h4 {
   border-bottom: 1px solid black;
 }
 
