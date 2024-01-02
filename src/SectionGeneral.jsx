@@ -37,20 +37,23 @@ export default function SectionGeneral({ title, data, setData }) {
   }
 
   function handleTitle(e) {
-    setData({
-      ...data,
-      educationalInfo: { ...data.educationalInfo, title: e.target.value },
-    });
+    const targetId = e.target.id;
+    const targetObject = data.educationalInfo[targetId];
+    targetObject.title = e.target.value;
+
+    const newData = { ...data };
+    newData.educationalInfo[targetId] = targetObject;
+    setData(newData);
   }
 
   function handleSchoolDate(e) {
-    setData({
-      ...data,
-      educationalInfo: {
-        ...data.educationalInfo,
-        dateCompleted: e.target.value,
-      },
-    });
+    const targetId = e.target.id;
+    const targetObject = data.educationalInfo[targetId];
+    targetObject.dateCompleted = e.target.value;
+
+    const newData = { ...data };
+    newData.educationalInfo[targetId] = targetObject;
+    setData(newData);
   }
 
   // Work Info onChange handlers
@@ -118,12 +121,14 @@ export default function SectionGeneral({ title, data, setData }) {
                 type={"text"}
                 value={item.title}
                 onChange={handleTitle}
+                id={item.id}
               />
               <Input
                 label={"Completed Date"}
                 type={"date"}
                 value={item.dateCompleted}
                 onChange={handleSchoolDate}
+                id={item.id}
               />
             </div>
           );
