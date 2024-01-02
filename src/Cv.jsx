@@ -28,6 +28,15 @@ export default function Cv({ data }) {
           </div>
         ))}
       </div>
+
+      <div className="cv-skill-container">
+        {data.skills.map((item) => (
+          <div key={item.id} className="cv-skill">
+            <h4>Skill {item.id + 1}</h4>
+            <p>{item.skill}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
