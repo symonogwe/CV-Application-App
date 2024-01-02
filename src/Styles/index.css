@@ -121,8 +121,11 @@ button:hover {
 }
 
 @media (min-width: 600px) {
+  body {
+    display: grid;
+    align-items: center;
+  }
   .app {
-    /* border: 1px solid red; */
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
