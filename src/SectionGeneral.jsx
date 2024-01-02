@@ -1,5 +1,6 @@
 import Input from "./Input";
 import { TextArea } from "./Input";
+import AddButton from "./AddButton";
 
 export default function SectionGeneral({ title, data, setData }) {
   // General Info Onchange handlers
@@ -78,6 +79,24 @@ export default function SectionGeneral({ title, data, setData }) {
     });
   }
 
+  // Add section button functionality
+  function addEducationSection() {
+    const arrayLength = data.educationalInfo.length;
+    const nextId = arrayLength;
+
+    const newObject = {
+      school: "",
+      title: "",
+      dateCompleted: "",
+      id: nextId,
+    };
+
+    const newData = { ...data };
+    newData.educationalInfo.push(newObject);
+
+    setData(newData);
+  }
+
   if (title === "General Info") {
     return (
       <div className="general-info-container">
@@ -133,6 +152,7 @@ export default function SectionGeneral({ title, data, setData }) {
             </div>
           );
         })}
+        <AddButton sectionName={"education"} onClick={addEducationSection} />
       </div>
     );
   } else {
