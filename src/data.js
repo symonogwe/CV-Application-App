@@ -11,12 +11,6 @@ const cvInformation = {
       dateCompleted: "",
       id: 0,
     },
-    {
-      school: "",
-      title: "",
-      dateCompleted: "",
-      id: 1,
-    },
   ],
 
   workInfo: [
