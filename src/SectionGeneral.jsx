@@ -91,6 +91,17 @@ export default function SectionGeneral({ title, data, setData }) {
     setData(newData);
   }
 
+  function handleSkill(e) {
+    const targetId = e.target.id;
+    const targetObject = data.skills[targetId];
+    targetObject.skill = e.target.value;
+
+    const newData = { ...data };
+    newData.skills[targetId] = targetObject;
+
+    setData(newData);
+  }
+
   // Add section button functionality
   function addEducationSection() {
     const arrayLength = data.educationalInfo.length;
@@ -122,6 +133,21 @@ export default function SectionGeneral({ title, data, setData }) {
 
     const newData = { ...data };
     newData.workInfo.push(newObject);
+
+    setData(newData);
+  }
+
+  function addSkill() {
+    const arrayLength = data.skills.length;
+    const nextId = arrayLength;
+
+    const newObject = {
+      skill: "",
+      id: nextId,
+    };
+
+    const newData = { ...data };
+    newData.skills.push(newObject);
 
     setData(newData);
   }
@@ -184,7 +210,7 @@ export default function SectionGeneral({ title, data, setData }) {
         <AddButton sectionName={"education"} onClick={addEducationSection} />
       </div>
     );
-  } else {
+  } else if (title === "Work Experience") {
     return (
       <div className="work-info-container">
         <h2>{title}</h2>
@@ -215,6 +241,26 @@ export default function SectionGeneral({ title, data, setData }) {
           );
         })}
         <AddButton sectionName={"Work"} onClick={addWorkSection} />
+      </div>
+    );
+  } else if (title === "Skills Info") {
+    return (
+      <div className="skills-info-container">
+        <h2>{title}</h2>
+        {data.skills.map((item) => {
+          return (
+            <div key={item.id} className="skill-block">
+              <Input
+                label={"Skill"}
+                type={"text"}
+                value={item.skill}
+                onChange={handleSkill}
+                id={item.id}
+              />
+            </div>
+          );
+        })}
+        <AddButton sectionName={"Skill"} onClick={addSkill} />
       </div>
     );
   }
