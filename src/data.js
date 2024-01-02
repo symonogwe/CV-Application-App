@@ -18,6 +18,7 @@ const cvInformation = {
       company: "",
       position: "",
       responsibility: "",
+      id: 0,
     },
   ],
 };
