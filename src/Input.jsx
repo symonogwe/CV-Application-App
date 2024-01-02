@@ -15,12 +15,12 @@ export default function Input({ label, type, value, onChange, id }) {
   );
 }
 
-export function TextArea({ label, value, onChange }) {
+export function TextArea({ label, value, onChange, id }) {
   return (
     <>
       <label htmlFor={label}>
         {label}: {"  "}
-        <textarea value={value} onChange={onChange}></textarea>
+        <textarea id={id} value={value} onChange={onChange}></textarea>
       </label>
     </>
   );
