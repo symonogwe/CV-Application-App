@@ -176,23 +176,33 @@ export default function SectionGeneral({ title, data, setData }) {
     return (
       <div className="work-info-container">
         <h2>{title}</h2>
-        <Input
-          label={"Company"}
-          type={"text"}
-          value={data.workInfo.company}
-          onChange={handleCompany}
-        />
-        <Input
-          label={"Position"}
-          type={"text"}
-          value={data.workInfo.position}
-          onChange={handlePosition}
-        />
-        <TextArea
-          label={"Responsibility"}
-          value={data.workInfo.responsibility}
-          onChange={handleResponsibility}
-        />
+
+        {data.workInfo.map((item) => {
+          return (
+            <div key={item.id} className="work-block">
+              <Input
+                label={"Company"}
+                type={"text"}
+                value={item.company}
+                onChange={handleCompany}
+                id={item.id}
+              />
+              <Input
+                label={"Position"}
+                type={"text"}
+                value={item.position}
+                onChange={handlePosition}
+                id={item.id}
+              />
+              <TextArea
+                label={"Responsibility"}
+                value={item.responsibility}
+                onChange={handleResponsibility}
+                id={item.id}
+              />
+            </div>
+          );
+        })}
         <AddButton sectionName={"Work"} onClick={addWorkSection} />
       </div>
     );
