@@ -97,6 +97,23 @@ export default function SectionGeneral({ title, data, setData }) {
     setData(newData);
   }
 
+  function addWorkSection() {
+    const arrayLength = data.workInfo.length;
+    const nextId = arrayLength;
+
+    const newObject = {
+      company: "",
+      position: "",
+      responsibility: "",
+      id: nextId,
+    };
+
+    const newData = { ...data };
+    newData.workInfo.push(newObject);
+
+    setData(newData);
+  }
+
   if (title === "General Info") {
     return (
       <div className="general-info-container">
@@ -176,6 +193,7 @@ export default function SectionGeneral({ title, data, setData }) {
           value={data.workInfo.responsibility}
           onChange={handleResponsibility}
         />
+        <AddButton sectionName={"Work"} onClick={addWorkSection} />
       </div>
     );
   }
