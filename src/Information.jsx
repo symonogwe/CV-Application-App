@@ -10,6 +10,7 @@ function Information({ data, setData }) {
         setData={setData}
       />
       <SectionGeneral title={"Work Experience"} data={data} setData={setData} />
+      <SectionGeneral title={"Skills Info"} data={data} setData={setData} />
     </div>
   );
 }
