@@ -21,6 +21,12 @@ const cvInformation = {
       id: 0,
     },
   ],
+  skills: [
+    {
+      skill: "",
+      id: 0,
+    },
+  ],
 };
 
 export default cvInformation;
