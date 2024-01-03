@@ -102,6 +102,39 @@ export default function SectionGeneral({ title, data, setData }) {
     setData(newData);
   }
 
+  function handleReferenceName(e) {
+    const targetId = e.target.id;
+    const targetObject = data.references[targetId];
+    targetObject.name = e.target.value;
+
+    const newData = { ...data };
+    newData.references[targetId] = targetObject;
+
+    setData(newData);
+  }
+
+  function handleReferenceRelationship(e) {
+    const targetId = e.target.id;
+    const targetObject = data.references[targetId];
+    targetObject.relationship = e.target.value;
+
+    const newData = { ...data };
+    newData.references[targetId] = targetObject;
+
+    setData(newData);
+  }
+
+  function handleReferenceEmail(e) {
+    const targetId = e.target.id;
+    const targetObject = data.references[targetId];
+    targetObject.email = e.target.value;
+
+    const newData = { ...data };
+    newData.references[targetId] = targetObject;
+
+    setData(newData);
+  }
+
   // Add section button functionality
   function addEducationSection() {
     const arrayLength = data.educationalInfo.length;
@@ -149,6 +182,22 @@ export default function SectionGeneral({ title, data, setData }) {
     const newData = { ...data };
     newData.skills.push(newObject);
 
+    setData(newData);
+  }
+
+  function addReference() {
+    const arrayLength = data.references.length;
+    const nextId = arrayLength;
+
+    const newObject = {
+      name: "",
+      relationship: "",
+      email: "",
+      id: nextId,
+    };
+
+    const newData = { ...data };
+    newData.references.push(newObject);
     setData(newData);
   }
 
@@ -261,6 +310,40 @@ export default function SectionGeneral({ title, data, setData }) {
           );
         })}
         <AddButton sectionName={"Skill"} onClick={addSkill} />
+      </div>
+    );
+  } else if (title === "References") {
+    return (
+      <div className="references-info-container">
+        <h2>{title}</h2>
+        {data.references.map((item) => {
+          return (
+            <div key={item.id} className="reference-block">
+              <Input
+                label={"Name"}
+                type={"text"}
+                value={item.name}
+                onChange={handleReferenceName}
+                id={item.id}
+              />
+              <Input
+                label={"Relationship"}
+                type={"text"}
+                value={item.relationship}
+                onChange={handleReferenceRelationship}
+                id={item.id}
+              />
+              <Input
+                label={"Email"}
+                type={"text"}
+                value={item.email}
+                onChange={handleReferenceEmail}
+                id={item.id}
+              />
+            </div>
+          );
+        })}
+        <AddButton sectionName={"Reference"} onClick={addReference} />
       </div>
     );
   }
