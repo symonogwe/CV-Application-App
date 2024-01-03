@@ -2,10 +2,13 @@ export default function Cv({ data }) {
   return (
     <div className="cv-container">
       <h1>MY CV</h1>
-      <h2>General Information</h2>
-      <p>Name: {data.generalInfo.name}</p>
-      <p>Email: {data.generalInfo.email}</p>
-      <p>Phone: {data.generalInfo.phone}</p>
+
+      <div className="cv-general-info-container">
+        <h2>General Information</h2>
+        <p>Name: {data.generalInfo.name}</p>
+        <p>Email: {data.generalInfo.email}</p>
+        <p>Phone: {data.generalInfo.phone}</p>
+      </div>
 
       <div className="cv-education-container">
         {data.educationalInfo.map((item) => (
