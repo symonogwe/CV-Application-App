@@ -27,6 +27,14 @@ const cvInformation = {
       id: 0,
     },
   ],
+  references: [
+    {
+      name: "",
+      relationship: "",
+      email: "",
+      id: 0,
+    },
+  ],
 };
 
 export default cvInformation;
