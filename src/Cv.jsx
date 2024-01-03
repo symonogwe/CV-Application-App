@@ -37,6 +37,17 @@ export default function Cv({ data }) {
           </div>
         ))}
       </div>
+
+      <div className="cv-references-container">
+        {data.references.map((item) => (
+          <div key={item.id} className="cv-reference">
+            <h4>Reference {item.id + 1}</h4>
+            <p>Name: {item.name}</p>
+            <p>Relationship: {item.relationship}</p>
+            <p>Email {item.email}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
