@@ -105,6 +105,13 @@ button:hover {
 
 .cv-container h1 {
   text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.cv-general-info-container {
+  border: 2px solid var(--sub-base-color);
+  max-width: 55%;
+  margin-top: 2em;
 }
 
 .cv-education-container,
@@ -114,6 +121,7 @@ button:hover {
   gap: 15px;
   grid-template-columns: 1fr 1fr;
   text-align: center;
+  margin-top: 2em;
 }
 
 .cv-skill-container {
@@ -121,6 +129,7 @@ button:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   text-align: center;
+  margin-top: 2em;
 }
 
 .cv-education h4,
