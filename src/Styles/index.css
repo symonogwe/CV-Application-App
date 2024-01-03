@@ -54,7 +54,8 @@ body {
 }
 
 .education-block,
-.work-block {
+.work-block,
+.reference-block {
   display: grid;
   gap: 5px;
 }
@@ -67,6 +68,13 @@ body {
 }
 
 .skills-info-container {
+  display: grid;
+  justify-items: center;
+  padding: 1.3em 0em;
+  gap: 5px;
+}
+
+.references-info-container {
   display: grid;
   justify-items: center;
   padding: 1.3em 0em;
@@ -100,7 +108,8 @@ button:hover {
 }
 
 .cv-education-container,
-.cv-work-container {
+.cv-work-container,
+.cv-references-container {
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr;
