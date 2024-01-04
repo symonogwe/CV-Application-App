@@ -101,6 +101,7 @@ button:hover {
   margin-top: 2em;
   background-color: #fff;
   padding: 2em;
+  box-shadow: var(--box-shadow);
 }
 
 .cv-container h1 {
