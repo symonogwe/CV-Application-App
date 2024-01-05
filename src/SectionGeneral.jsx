@@ -205,24 +205,26 @@ export default function SectionGeneral({ title, data, setData }) {
     return (
       <div className="general-info-container">
         <h2>{title}</h2>
-        <Input
-          label={"Name"}
-          type={"text"}
-          value={data.generalInfo.name}
-          onChange={handleName}
-        />
-        <Input
-          label={"Email"}
-          type={"email"}
-          value={data.generalInfo.email}
-          onChange={handleEmail}
-        />
-        <Input
-          label={"Phone"}
-          type={"number"}
-          value={data.generalInfo.phone}
-          onChange={handlePhone}
-        />
+        <div className="general-info-block">
+          <Input
+            label={"Name"}
+            type={"text"}
+            value={data.generalInfo.name}
+            onChange={handleName}
+          />
+          <Input
+            label={"Email"}
+            type={"email"}
+            value={data.generalInfo.email}
+            onChange={handleEmail}
+          />
+          <Input
+            label={"Phone"}
+            type={"number"}
+            value={data.generalInfo.phone}
+            onChange={handlePhone}
+          />
+        </div>
       </div>
     );
   } else if (title === "Educational Experience") {
