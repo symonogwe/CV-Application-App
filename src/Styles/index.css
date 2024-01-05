@@ -55,7 +55,8 @@ body {
 
 .education-block,
 .work-block,
-.reference-block {
+.reference-block,
+.general-info-block {
   display: grid;
   gap: 5px;
 }
