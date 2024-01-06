@@ -3,11 +3,17 @@ export default function Cv({ data }) {
     <div className="cv-container">
       <h1>MY CV</h1>
 
-      <div className="cv-general-info-container">
-        <h2>General Information</h2>
-        <p>Name: {data.generalInfo.name}</p>
-        <p>Email: {data.generalInfo.email}</p>
-        <p>Phone: {data.generalInfo.phone}</p>
+      <div className="info-data">
+        <div className="cv-general-info-container">
+          <h2>General Information</h2>
+          <p>Name: {data.generalInfo.name}</p>
+          <p>Email: {data.generalInfo.email}</p>
+          <p>Phone: {data.generalInfo.phone}</p>
+        </div>
+
+        <div className="name-initials">
+          <h2>{getNameInitials(data)}</h2>
+        </div>
       </div>
 
       <div className="cv-education-container">
@@ -53,4 +59,20 @@ export default function Cv({ data }) {
       </div>
     </div>
   );
+}
+
+function getNameInitials(data) {
+  if (data.generalInfo.name) {
+    const name = data.generalInfo.name;
+    const nameArr = name.split(" ");
+    const initials = nameArr.map((item) => {
+      const split = item.split("");
+      return split[0];
+    });
+
+    const joined = initials.join("");
+    return joined;
+
+    // console.log(nameArr);
+  }
 }
