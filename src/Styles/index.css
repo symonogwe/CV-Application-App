@@ -112,6 +112,18 @@ button:hover {
   border-bottom: 1px solid var(--sub-base-color);
 }
 
+.info-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name-initials {
+  background-color: var(--sub-base-color);
+  padding: 2em;
+  border-radius: 50%;
+}
+
 .cv-general-info-container {
   border: 2px solid var(--sub-base-color);
   max-width: 55%;
